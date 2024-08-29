@@ -1,0 +1,267 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background: #676664 url("../img/bg.jpg") no-repeat fixed center;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: relative; /* Change from fixed to relative */
+    margin-left: 200px; /* Add margin to account for the fixed-width nav */
+}
+
+/* Navigation Section */
+nav.navsection {
+    position: fixed; /* Keep nav fixed */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 200px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start;
+    padding: 20px 10px;
+    background-color: #676664;
+    align-items: center;
+    z-index: 1;
+}
+nav.navsection img{
+    width: 180px;
+    margin-bottom: 25px;
+}
+nav.navsection ul.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 30px;
+    width: 100%; /* Make sure the links take the full width of the nav section */
+}
+
+nav.navsection ul.nav-links li a {
+    text-decoration: none;
+    color: #caa165;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0; /* Add padding for spacing */
+    width: 100%; /* Make sure the link takes the full width */
+}
+
+nav.navsection ul.nav-links li:hover {
+    border-left: 4px solid #192b52; /* Change to a left border for vertical emphasis */
+    background-color: #5c5b59; /* Optional: Highlight the background on hover */
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 2;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: #caa165;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #deb371;
+    box-shadow: 5px 5px 2px #f3d9a5;
+    text-align: center;
+}
+
+.hero-section img {
+    max-width: 30%;
+    height: auto;
+}
+
+.hero-section .hero-text h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px #ff0000;
+}
+
+.hero-section .hero-text p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Statement Text */
+.statement-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #deb371;
+}
+
+.statement-text ul {
+    list-style-image: url("../img/check.png");
+    padding: 10px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.statement-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.statement-text ul li {
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-weight: 500;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    padding: 20px;
+    background-color: #e5d4ba;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 5px 5px 2px #676664;
+}
+
+.gallery-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #676664;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.footer-section button {
+    background-color: #25d366;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section button:hover {
+    background-color: #128c7e;
+    border-radius: 50px;
+    animation: pulse 1s infinite;
+}
+
+.footer-section button a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section button ion-icon {
+    margin-right: 5px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    body {
+        margin-left: 0; /* Remove margin for smaller screens */
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #676664;
+        padding: 20px;
+        width: 200px;
+        display: none; /* Hide navigation links by default */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-section .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .statement-text {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+
+    .footer-section h1 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p { font-size: 1rem;}
+       
+}
